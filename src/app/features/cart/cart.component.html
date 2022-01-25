@@ -1,0 +1,19 @@
+<div class=“button-actions” class="botones">
+    <button type="button" class="btn btn-success" (click)= "addOneItem()" > Add 1 item </button>
+    <input #idToRemove>
+    <button type="button" class="btn btn-danger" (click)="removeItem(idToRemove.value)"> Remove item</button>
+    <button type="button" class="btn btn-warning" (click)="clearCart()"> Clear cart</button>
+</div>
+  
+<div class="cart-items container" *ngIf= "cartItems$">
+    <div *ngFor = "let cartItem of cartItems$ | async">
+        <div class="card border-warning mb-3" style="max-width: 18rem;">
+            <div class="card-header">{{ cartItem.item.name }}
+                <div class="card-body">
+                    <h5 class="card-title">Warning card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>
